@@ -15,6 +15,12 @@ pnpm preview
 
 `dist/` é a saída estática pronta para hospedagem. Nenhum segredo ou serviço de backend é necessário.
 
+## GitHub Pages
+
+Em Settings → Pages → Source, selecione **GitHub Actions**. O workflow `.github/workflows/pages.yml` instala as dependências, executa o build e publica apenas `dist/` em cada atualização de `main`. Não publique a raiz de `main`: ela contém arquivos de desenvolvimento, cujas importações precisam ser compiladas pelo Vite.
+
+O Vite usa `base: './'` para manter CSS, JavaScript e mídia funcionando sob `/estudioz/` e em domínio próprio. Endereço de teste: https://kinhoob.github.io/estudioz/.
+
 ## Estrutura
 
 - `index.html`: narrativa, semântica, navegação e contatos.
